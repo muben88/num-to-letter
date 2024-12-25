@@ -34,6 +34,10 @@ function translateLettersToNumbers(input) {
 document.body.innerHTML = `
     <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
         <h1>Number-to-Letter Translator</h1>
+        <p id="description">
+        This project is a web-based "Number-to-Letter Translator" that mimics the input logic of an old mobile phone keypad. 
+        Enter numbers to get corresponding letters or vice versa. Use the number <strong>0</strong> to represent spaces between words.
+        </p>
         <div>
             <label for="input">Input:</label>
             <input type="text" id="input" style="width: 300px; margin: 10px;" />
