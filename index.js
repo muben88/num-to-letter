@@ -1,0 +1,61 @@
+// Simple web app to translate numbers to letters and vice versa
+
+// Mapping for number to letter (old phone keyboard layout)
+const numberToLetterMap = {
+    '2': 'A', '22': 'B', '222': 'C',
+    '3': 'D', '33': 'E', '333': 'F',
+    '4': 'G', '44': 'H', '444': 'I',
+    '5': 'J', '55': 'K', '555': 'L',
+    '6': 'M', '66': 'N', '666': 'O',
+    '7': 'P', '77': 'Q', '777': 'R', '7777': 'S',
+    '8': 'T', '88': 'U', '888': 'V',
+    '9': 'W', '99': 'X', '999': 'Y', '9999': 'Z',
+    '0': ' ' // Space character
+};
+
+// Reverse mapping for letter to number
+const letterToNumberMap = Object.fromEntries(
+    Object.entries(numberToLetterMap).map(([key, value]) => [value, key])
+);
+
+function translateNumbersToLetters(input) {
+    return input.split('.')
+                .map(segment => numberToLetterMap[segment] || '?')
+                .join('');
+}
+
+function translateLettersToNumbers(input) {
+    return input.toUpperCase().split('')
+                .map(char => letterToNumberMap[char] || '?')
+                .join('.');
+}
+
+// Simple HTML Interface
+document.body.innerHTML = `
+    <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+        <h1>Number-to-Letter Translator</h1>
+        <div>
+            <label for="input">Input:</label>
+            <input type="text" id="input" style="width: 300px; margin: 10px;" />
+        </div>
+        <button id="toLetters">Translate to Letters</button>
+        <button id="toNumbers">Translate to Numbers</button>
+        <div style="margin-top: 20px;">
+            <strong>Output:</strong>
+            <p id="output" style="font-size: 18px; color: blue;"></p>
+        </div>
+    </div>
+`;
+
+// Event Listeners
+document.getElementById('toLetters').addEventListener('click', () => {
+    const input = document.getElementById('input').value;
+    const output = translateNumbersToLetters(input);
+    document.getElementById('output').textContent = output;
+});
+
+document.getElementById('toNumbers').addEventListener('click', () => {
+    const input = document.getElementById('input').value;
+    const output = translateLettersToNumbers(input);
+    document.getElementById('output').textContent = output;
+});
