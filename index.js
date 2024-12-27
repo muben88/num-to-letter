@@ -33,6 +33,25 @@ function translateLettersToNumbers(input) {
 // Simple HTML Interface
 document.body.innerHTML = `
     <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+            <p>حنانُ، يا زهرةً في بُستانِ الأماني<br>
+            يا نجمةً تضيءُ لي دروبَ الزمانِ<br><br>
+            في عينيكِ بحرٌ، موجهُ الحبِّ طاغٍ<br>
+            وفي ابتسامتكِ شمسٌ تُبَدِّدُ الأحزانِ<br><br>
+            أحبكِ حبًّا لا حدودَ له،<br>
+            كما يحبُّ القلبُ نبضَه في الأمانِ<br><br>
+            أنتِ الحلمُ الذي طالما سَكنَ فكري<br>
+            وأنتِ النبضُ الذي يحيا به كياني<br><br>
+            حنانُ، يا عطرًا يملأُ روحي صفاءً<br>
+            ويا صوتًا يُنادي القلبَ بالحنانِ<br><br>
+            أراكِ غدًا عروسي، أمسكِ بيديكِ<br>
+            ونسيرُ معًا نحوَ عَهدِ الزمانِ<br><br>
+            يا حنانُ، ستبقينَ في القلبِ مَلكةً<br>
+            وفي روحي نورًا لا ينطفئ في المكانِ</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+        <button id="surpriseButton">Surprise me!!</button>
         <h1>Number-to-Letter Translator</h1>
         <p id="description">
         This project is a web-based "Number-to-Letter Translator" that mimics the input logic of an old mobile phone keypad. 
@@ -63,3 +82,13 @@ document.getElementById('toNumbers').addEventListener('click', () => {
     const output = translateLettersToNumbers(input);
     document.getElementById('output').textContent = output;
 });
+
+document.getElementById('surpriseButton').addEventListener('click', () => {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+});
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
