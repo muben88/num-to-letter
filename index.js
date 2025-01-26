@@ -96,3 +96,125 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
+
+
+// Add a new button for 'Dates' with a love-themed design
+const surpriseButton = document.getElementById('surpriseButton');
+const datesButton = document.createElement('button');
+datesButton.textContent = 'Dates';
+datesButton.id = 'datesButton';
+datesButton.style.marginLeft = '10px';
+datesButton.style.padding = '10px 20px';
+datesButton.style.backgroundColor = '#ff69b4'; // Pink for a love theme
+datesButton.style.color = 'white';
+datesButton.style.border = 'none';
+datesButton.style.borderRadius = '5px';
+datesButton.style.cursor = 'pointer';
+datesButton.style.fontWeight = 'bold';
+datesButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+
+// Add hover effect
+datesButton.addEventListener('mouseenter', () => {
+    datesButton.style.backgroundColor = '#ff1493'; // Deep pink on hover
+});
+datesButton.addEventListener('mouseleave', () => {
+    datesButton.style.backgroundColor = '#ff69b4';
+});
+
+// Append the new button next to 'Surprise me'
+surpriseButton.insertAdjacentElement('afterend', datesButton);
+
+// Create the Dates popup
+const datesPopup = document.createElement('div');
+datesPopup.id = 'datesPopup';
+datesPopup.style.position = 'fixed';
+datesPopup.style.top = '50%';
+datesPopup.style.left = '50%';
+datesPopup.style.transform = 'translate(-50%, -50%)';
+datesPopup.style.width = '65%';
+datesPopup.style.backgroundColor = '#ffe4e1'; // Light pink background
+
+datesPopup.style.color = '#d40073'; // Dark pink text for love theme
+datesPopup.style.fontFamily = 'Cursive, sans-serif';
+datesPopup.style.padding = '20px';
+datesPopup.style.textAlign = 'left';
+datesPopup.style.borderRadius = '10px';
+datesPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+datesPopup.style.display = 'none';
+datesPopup.style.zIndex = '1000';
+
+// Add table content
+const table = `
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border-bottom: 2px solid #d40073; padding: 10px;">Date</th>
+                <th style="border-bottom: 2px solid #d40073; padding: 10px;">Where</th>
+                <th style="border-bottom: 2px solid #d40073; padding: 10px;">When</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">First Date!</td>
+                <td style="padding: 10px; max-width: 40px;">Technopark</td>
+                <td style="padding: 10px; max-width: 40px;">09 June 2024</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">2nd Date</td>
+                <td style="padding: 10px; max-width: 40px;">Technopark AGAIN! (but at night haha)</td>
+                <td style="padding: 10px; max-width: 40px;">19 November 2024</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">3rd Date (Special!!!)</td>
+                <td style="padding: 10px; max-width: 40px;">Cinema - Za3zou3 film (someone really liked it hhhh)- Hassan 2 Mosque</td>
+                <td style="padding: 10px; max-width: 40px;">21 November 2024</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">4th Date (To remember forever!! What a way to start the new year!!!)</td>
+                <td style="padding: 10px; max-width: 40px;">Ain Diab beach</td>
+                <td style="padding: 10px; max-width: 40px;">04 January 2025</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="closeDatesPopup" style="margin-top: 20px; padding: 10px 20px; background-color: #d40073; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Close</button>
+`;
+datesPopup.innerHTML = table;
+
+document.body.appendChild(datesPopup);
+
+// Add overlay for Dates popup
+const datesOverlay = document.createElement('div');
+datesOverlay.id = 'datesOverlay';
+datesOverlay.style.position = 'fixed';
+datesOverlay.style.top = '0';
+datesOverlay.style.left = '0';
+datesOverlay.style.width = '100%';
+datesOverlay.style.height = '100%';
+datesOverlay.style.background = 'rgba(0, 0, 0, 0.5)';
+datesOverlay.style.display = 'none';
+datesOverlay.style.zIndex = '999';
+
+document.body.appendChild(datesOverlay);
+
+// Event listeners for Dates button
+const showDatesPopup = () => {
+    datesPopup.style.display = 'block';
+    datesOverlay.style.display = 'block';
+    // Adjust popup size for mobile devices
+    if (window.innerWidth <= 768) {
+        datesPopup.style.width = '80%';
+        datesPopup.style.padding = '10px';
+    } else {
+        datesPopup.style.width = '85%';
+        datesPopup.style.padding = '20px';
+    }
+};
+
+const hideDatesPopup = () => {
+    datesPopup.style.display = 'none';
+    datesOverlay.style.display = 'none';
+};
+
+datesButton.addEventListener('click', showDatesPopup);
+document.getElementById('closeDatesPopup').addEventListener('click', hideDatesPopup);
+datesOverlay.addEventListener('click', hideDatesPopup);
