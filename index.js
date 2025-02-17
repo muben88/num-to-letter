@@ -174,6 +174,11 @@ const table = `
                 <td style="padding: 10px; max-width: 40px;">Ain Diab beach</td>
                 <td style="padding: 10px; max-width: 40px;">04 January 2025</td>
             </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">5th Date</td>
+                <td style="padding: 10px; max-width: 40px;">Ain Diab Beach - Anfa Park (someone wasnt in the mood hhhh)</td>
+                <td style="padding: 10px; max-width: 40px;">9 February 2025</td>
+            </tr>
         </tbody>
     </table>
     <button id="closeDatesPopup" style="margin-top: 20px; padding: 10px 20px; background-color: #d40073; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Close</button>
