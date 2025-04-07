@@ -179,6 +179,21 @@ const table = `
                 <td style="padding: 10px; max-width: 40px;">Ain Diab Beach - Anfa Park (someone wasnt in the mood hhhh)</td>
                 <td style="padding: 10px; max-width: 40px;">9 February 2025</td>
             </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">Arrival of the Queen to BG</td>
+                <td style="padding: 10px; max-width: 40px;">She's finally here!! Can't wait to meet her, hold her hands, talk with her...</td>
+                <td style="padding: 10px; max-width: 40px;">15 February 2025</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">1st Meeting in BG!!!</td>
+                <td style="padding: 10px; max-width: 40px;">After work, it's finally the big & awaited day, we're meeting for the 1st time here, FINALLY TOGETHER!</td>
+                <td style="padding: 10px; max-width: 40px;">18 February 2025</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; max-width: 40px;">😍😍😍</td>
+                <td style="padding: 10px; max-width: 40px;">WHAT A NIGHT IT WAS! To be remembered for the rest of our lives! Our first hug everrrrr 😍</td>
+                <td style="padding: 10px; max-width: 40px;">5 April 2025</td>
+            </tr>
         </tbody>
     </table>
     <button id="closeDatesPopup" style="margin-top: 20px; padding: 10px 20px; background-color: #d40073; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Close</button>
